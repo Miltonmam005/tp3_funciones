@@ -15,6 +15,7 @@ Output:
 */
 
 function gestionarCiudades() {
+
   const ciudades = [
     "París, Francia",
     "Londres, Reino Unido",
@@ -104,3 +105,73 @@ function gestionarCiudades() {
   document.writeln("<p>Proceso completado.</p>");
 }
 gestionarCiudades();
+=======
+    const ciudades = ["París, Francia",
+  "Londres, Reino Unido",
+  "Nueva York, Estados Unidos",
+  "Tokio, Japón",
+  "Roma, Italia",
+  "Sídney, Australia",
+  "Berlín, Alemania",
+  "Madrid, España",
+  "Moscú, Rusia",
+  "El Cairo, Egipto",
+  "Dubái, Emiratos Árabes Unidos",
+  "Buenos Aires, Argentina",
+  "Río de Janeiro, Brasil",
+  "Toronto, Canadá",
+  "Pekín, China",
+  "Ciudad de México, México",
+  "Ámsterdam, Países Bajos",
+  "Estambul, Turquía",
+  "Bangkok, Tailandia",
+  "Seúl, Corea del Sur"];
+    let ciudad;
+  
+    document.writeln("<h1>Arreglo de Ciudades</h1>");
+    
+    while (true) {
+      ciudad = prompt("Ingrese una ciudad o presione Cancelar para terminar:");
+      
+      if (ciudad === null || ciudad.trim() === "") {
+        break;
+      }
+      
+      ciudades.push(ciudad.trim());
+    }
+  
+    document.writeln("<div style='margin: 20px; padding: 15px; border: 1px solid #ccc; border-radius: 5px;'>");
+    
+    document.writeln("<h2>Arreglo de ciudades:</h2>");
+    document.writeln("<pre>" + JSON.stringify(ciudades, null, 2) + "</pre>");
+  
+    if (ciudades.length > 0) {
+      document.writeln("<p><strong>Longitud del arreglo:</strong> " + ciudades.length + "</p>");
+      
+      document.writeln("<p><strong>Posiciones específicas:</strong></p>");
+      document.writeln("<ul>");
+      document.writeln("<li>Primera posición: " + (ciudades[0] || "No existe") + "</li>");
+      document.writeln("<li>Tercera posición: " + (ciudades[2] || "No existe") + "</li>");
+      document.writeln("<li>Última posición: " + ciudades[ciudades.length - 1] + "</li>");
+      document.writeln("</ul>");
+  
+      ciudades.push("París");
+      document.writeln("<p><strong>Con París añadido:</strong></p>");
+      document.writeln("<pre>" + JSON.stringify(ciudades, null, 2) + "</pre>");
+  
+      if (ciudades.length >= 2) {
+        document.writeln("<p><strong>Segunda posición (original):</strong> " + ciudades[1] + "</p>");
+        ciudades[1] = "Barcelona";
+        document.writeln("<p><strong>Segunda posición (modificada):</strong> " + ciudades[1] + "</p>");
+      }
+  
+      document.writeln("<h3>Arreglo final:</h3>");
+      document.writeln("<pre>" + JSON.stringify(ciudades, null, 2) + "</pre>");
+    } else {
+      document.writeln("<p>No se ingresaron ciudades.</p>");
+    }
+    
+    document.writeln("</div>");
+    document.writeln("<p>Proceso completado.</p>");
+  }
+  gestionarCiudades();
